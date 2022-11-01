@@ -231,7 +231,7 @@ int main(int argc, char *argv[])
     NodeContainer wifiApNode = routerNodes.Get(idxRouterForWireless);
 
     YansWifiChannelHelper wifiChannel = YansWifiChannelHelper::Default();
-    YansWifiPhyHelper wifiPhysical;
+    YansWifiPhyHelper wifiPhysical = YansWifiPhyHelper::Default();
     wifiPhysical.SetChannel(wifiChannel.Create());
 
     WifiMacHelper wifiMac;

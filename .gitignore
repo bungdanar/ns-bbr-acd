@@ -2,3 +2,8 @@ __pycache__/
 waf-tools/__pycache__/
 .waf**/
 build
+
+*.pcap
+*.data
+DDoSim.xml
+congestion-ddos-results/
