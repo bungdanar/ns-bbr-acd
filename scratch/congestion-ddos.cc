@@ -185,8 +185,15 @@ int main(int argc, char *argv[])
     }
 
     // TCP congestion control configuration
-    std::string tcpTypeId = "TcpBbr";
-    Config::SetDefault("ns3::TcpL4Protocol::SocketType", StringValue("ns3::" + tcpTypeId));
+    // std::string tcpTypeId = "TcpBbr";
+    // Config::SetDefault("ns3::TcpL4Protocol::SocketType", StringValue("ns3::" + tcpTypeId));
+
+    std::string transport_prot = "TcpBbr";
+    transport_prot = std::string("ns3::") + transport_prot;
+
+    TypeId tcpTid;
+    NS_ABORT_MSG_UNLESS(TypeId::LookupByNameFailSafe(transport_prot, &tcpTid), "TypeId " << transport_prot << " not found");
+    Config::SetDefault("ns3::TcpL4Protocol::SocketType", TypeIdValue(TypeId::LookupByName(transport_prot)));
 
     // Routers
     NodeContainer routerNodes;
