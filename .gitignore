@@ -7,3 +7,5 @@ build
 *.data
 DDoSim.xml
 congestion-ddos-results/
+
+.vscode
