@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm -rfv congestion-ddos-results/*
+rm -rfv *.pcap
+rm -rfv *.data
